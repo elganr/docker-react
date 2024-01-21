@@ -3,17 +3,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      # - /app/node_modules # Rights issues! See: https://github.com/docker/cli/issues/3202
-      - .:/app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      # - /app/node_modules # Rights issues! See: https://github.com/docker/cli/issues/3202
-      - .:/app
-    command: ["npm", "run", "test"]
+      - "80:80"
